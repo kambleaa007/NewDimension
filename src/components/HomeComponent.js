@@ -3,9 +3,10 @@ import { Container, Navbar, Nav, Col, Row, Table, CardGroup, Card } from 'react-
 import * as THREE from "three"
 
 import { Canvas, useFrame } from "react-three-fiber";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { OrbitControls, Stars, softShadows } from "@react-three/drei";
 import { Physics, usePlane, useBox } from "use-cannon";
 
+softShadows();
 
 function Rig() {
     return useFrame((state) => {
@@ -22,10 +23,10 @@ function Box() {
           api.velocity.set(0, 2, 0);
         }}
         ref={ref}
-        position={[0, 2, 0]}
+        position={[0, 2, 0]} castShadow receiveShadow
       >
         <boxBufferGeometry attach="geometry" />
-        <meshLambertMaterial attach="material" color="hotpink" />
+        <meshStandardMaterial attach="material" color="hotpink" roughness={0} metalness={0.1}  />
       </mesh>
     );
   }
@@ -35,7 +36,7 @@ function Box() {
       rotation: [-Math.PI / 2, 0, 0],
     }));
     return (
-      <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} castShadow receiveShadow>
         <planeBufferGeometry attach="geometry" args={[100, 100]} />
         <meshLambertMaterial attach="material" color="lightblue" />
       </mesh>
@@ -51,7 +52,8 @@ function HomeComponent(props) {
                 <Canvas shadows>
                     <OrbitControls />
                     <Stars />
-                    <ambientLight intensity={0.5} />
+                    <fog attach="fog" args={["grey", 0, 40]} />
+                    <ambientLight intensity={0.4} />
                     <spotLight position={[10, 15, 10]} angle={0.3} />
                     <Physics>
                         <Box />

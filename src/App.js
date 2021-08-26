@@ -10,6 +10,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import HomeComponent from './components/HomeComponent';
 import NavBar from './components/NavBar';
 import One from './components/One';
+import AboutUs from './components/AboutUs';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact component= { (props) => ( <HomeComponent  /> )} />
-        <Route path="/one" component={(props) => ( <One /> )} />             
+        <Route path="/one" component={(props) => ( <One /> )} />     
+        <Route path="/aboutus" component={(props) => ( <AboutUs /> )} />           
       </Switch>
     </Container>
     </HashRouter>
