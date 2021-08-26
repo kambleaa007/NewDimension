@@ -3,7 +3,7 @@ import { Container, Navbar, Nav, Col, Row, Table, CardGroup, Card } from 'react-
 import * as THREE from "three"
 
 import { Canvas, useFrame } from "react-three-fiber";
-import { OrbitControls, Stars } from "drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import { Physics, usePlane, useBox } from "use-cannon";
 
 
