@@ -6,8 +6,16 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0",
+    "material-ui-icons": "^1.0.0-beta.36",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.4.0",
+    "react-bootstrap-carousel": "^4.1.1",
     "react-dom": "^17.0.2",
+    "react-fontawesome": "^1.7.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
@@ -15,8 +23,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "http://kambleaa007.github.io/NewDimension/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -34,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0",
+    "react-test-renderer": "^17.0.2"
   }
 }
