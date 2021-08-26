@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { HashRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Container, Navbar, Nav, Col, Row } from 'react-bootstrap';
+
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'font-awesome/css/font-awesome.min.css';
+
+import HomeComponent from './components/HomeComponent';
+import NavBar from './components/NavBar';
+import One from './components/One';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+    <Container>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component= { (props) => ( <HomeComponent  /> )} />
+        <Route path="/one" component={(props) => ( <One /> )} />             
+      </Switch>
+    </Container>
+    </HashRouter>
+
   );
 }
 
