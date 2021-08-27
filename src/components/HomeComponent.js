@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { Container, Navbar, Nav, Col, Row, Table, CardGroup, Card } from 'react-bootstrap';
 import * as THREE from "three"
 
-import { Canvas, useFrame } from "react-three-fiber";
+import { Canvas, useFrame, useThree } from "react-three-fiber";
 import { OrbitControls, Stars, softShadows } from "@react-three/drei";
 import { Physics, usePlane, useBox } from "use-cannon";
 
@@ -17,11 +17,12 @@ function Rig() {
 
 function Box() {
     const [ref, api] = useBox(() => ({ mass: 1, position: [0, 2, 0] }));
+
     return (
       <mesh
         onClick={() => {
-          api.velocity.set(0, 2, 0);
-        }}
+          api.velocity.set(0, 4, 2);
+        }}        
         ref={ref}
         position={[0, 2, 0]} castShadow receiveShadow
       >
@@ -55,6 +56,9 @@ function HomeComponent(props) {
                     <fog attach="fog" args={["grey", 0, 40]} />
                     <ambientLight intensity={0.4} />
                     <spotLight position={[10, 15, 10]} angle={0.3} />
+                    <directionalLight position={[0, 2, 0]} intensity={1} />
+                    <directionalLight position={[2, 0, 0]} intensity={0.5} />
+                    <directionalLight position={[0, 0, 2]} intensity={0.2} />
                     <Physics>
                         <Box />
                         <Plane />
