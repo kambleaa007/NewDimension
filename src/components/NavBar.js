@@ -14,8 +14,8 @@ function NavBar() {
             </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="#one">3D Model</Nav.Link>
-              <Nav.Link href="#aboutus">About Us</Nav.Link>
-              <Nav.Link href="#contactus">Contact Us</Nav.Link>
+              <Nav.Link href="#aboutus">Universe</Nav.Link>
+              <Nav.Link href="#contactus">Play PingPong</Nav.Link>
             </Nav>
             </Container>
           </Navbar>
