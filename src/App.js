@@ -12,6 +12,7 @@ import NavBar from './components/NavBar';
 import One from './components/One';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
+import Drive from './components/car/Drive';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact component= { (props) => ( <HomeComponent  /> )} />
-        <Route path="/one" component={(props) => ( <One /> )} />     
+        <Route path="/one" component={(props) => ( <One /> )} /> 
+        <Route path="/drivecar" component={(props) => ( <One /> )} />     
         <Route path="/aboutus" component={(props) => ( <AboutUs /> )} />   
         <Route path="/contactus" component={(props) => ( <ContactUs /> )} />        
       </Switch>
